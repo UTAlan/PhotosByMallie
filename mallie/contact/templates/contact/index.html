@@ -1,0 +1,28 @@
+{% extends "base.html" %}	
+
+{% load static %}
+
+{% block jquery %}
+    Recaptcha.create("6Ldx1rkSAAAAAEVl7F-l6jXBzCYbrql_GFXN5JPD", "id_recaptcha", { theme: "white", callback: Recaptcha.focus_response_field } );
+{% endblock %}
+
+{% block content %}
+<h2>Contact</h2>
+
+{% if info.msg %}{% autoescape off %}{{ info.msg }}{% endautoescape %}{% endif %}
+
+<form id="contactForm" action="/contact/" method="post">{% csrf_token %}
+{{ info.form.as_p }}
+
+<p><label>&nbsp;</label></p>
+<div id="id_recaptcha" style="float: left; margin-bottom: 10px;"></div>
+
+<p>
+  <label>&nbsp;</label>
+  <input type="submit" value="Send" />
+</p>
+<br class="clear" />
+</form>
+
+{% endblock %}
+

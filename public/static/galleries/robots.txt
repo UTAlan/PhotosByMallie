@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /zenphoto/albums/
+Allow: /zenphoto/cache/
+Allow: /zenphoto/cache_html/
+Disallow: /zenphoto/themes/
+Disallow: /zenphoto/zp-core/
+Disallow: /zenphoto/zp-data/
+Disallow: /zenphoto/page/search/
+Disallow: /zenphoto/uploaded/
+Disallow: /zenphoto/backup/

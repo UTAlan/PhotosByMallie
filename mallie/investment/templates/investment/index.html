@@ -1,0 +1,10 @@
+{% extends "base.html" %}	
+
+{% load static %}
+
+{% block jquery %}
+{% endblock %}
+
+{% block content %}
+{% autoescape off %}{{ info.investment.content }}{% endautoescape %}
+{% endblock %}

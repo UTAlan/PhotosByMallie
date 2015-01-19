@@ -1,0 +1,68 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<link rel="stylesheet" href="https://html5resetcss.googlecode.com/files/html5reset-1.6.1.css" /> <!-- HTML5 Reset -->
+	<link rel="stylesheet" href="{% static "fancybox/source/jquery.fancybox.css" %}?v=2.1.5" type="text/css" media="screen" /> <!-- FancyBox -->
+	<link rel="stylesheet" href="{% static "fancybox/source/helpers/jquery.fancybox-buttons.css" %}?v=1.0.5" type="text/css" media="screen" /> <!-- FancyBox Buttons -->
+	<link rel="stylesheet" href="{% static "fancybox/source/helpers/jquery.fancybox-thumbs.css" %}?v=1.0.7" type="text/css" media="screen" /> <!-- FancyBox Thumbnails -->
+	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'> <!-- Abel Google Font -->
+	<link rel="stylesheet" href="{% static "css/style.css" %}" /> <!-- Custom Styles -->
+	
+	<title>{% block title %}Photos by Mallie{% endblock %}</title>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- JQuery -->
+	<script type="text/javascript" src="{% static "js/jquery.slides.min.js" %}"></script> <!-- SlidesJS -->
+	<script type="text/javascript" src="{% static "fancybox/lib/jquery.mousewheel-3.0.6.pack.js" %}"></script> <!-- FancyBox Mousewheel Plugin -->
+	<script type="text/javascript" src="{% static "fancybox/source/jquery.fancybox.pack.js" %}?v=2.1.5"></script> <!-- FancyBox -->
+	<script type="text/javascript" src="{% static "fancybox/source/helpers/jquery.fancybox-buttons.js" %}?v=1.0.5"></script> <!-- FancyBox Buttons -->
+	<script type="text/javascript" src="{% static "fancybox/source/helpers/jquery.fancybox-thumbs.js" %}?v=1.0.7"></script> <!-- FancyBox Thumbnails -->
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <!-- HTML5 Workaround for IE < 9 -->
+	
+	<script type="text/javascript">
+	$(document).ready(function() {
+                {% block jquery %}{% endblock %}
+	});
+	</script>
+</head>
+<body>
+	<div id="canvas">
+		<header id="page_header">
+			<div id="logo">
+				<a href="/"><img src="{% static "images/PhotosByMallie-Logo.jpg" %}" alt="Photos By Mallie" title="Photos By Mallie" /></a>
+			</div> <!-- </div id="logo"> -->
+			<nav>
+				<div class="nav_group"
+				<div class="nav_group" id="nav_information">
+					<h2>information</h2>
+					<ul>
+						<li><a href="http://galleries.photosbymallie.alanbeam.net">galleries</a></li>
+						<li><a href="/#clients/">clients</a></li>
+						<li><a href="/investment/">investment</a></li>
+					</ul>
+				</div> <!-- </div id="nav_information"> -->
+				<div class="nav_group" id="nav_connect">
+					<h2>connect</h2>
+					<ul>
+						<li><a href="/about/">about</a></li>
+						<li><a href="/contact/">contact</a></li>
+						<li><a href="http://www.facebook.com/PhotosByMallie">facebook</a></li>
+					</ul>
+				</div> <!-- </div id="nav_information"> -->
+			</nav>
+			
+			<div class="clear"></div>
+		</header>
+		
+		<article>{% block content %}{% endblock %}</article>
+		
+		<footer>
+			<ul id="footer_menu">
+				<li>All content copyright Photos by Mallie 2013.</li>
+			</ul>
+		</footer>
+	</div> <!-- </div id="canvas"> -->
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}	
+
+{% load static %}
+
+{% block jquery %}
+		$("#slides").slidesjs({width:720,height:480,effect:{fade:{speed:2500,crossfade: true}},navigation:{active:false},pagination:{active:false},play:{active:false,effect:'fade',interval:2500,auto:true,swap:false,pauseOnHover:false,restartDelay:2500}});
+{% endblock %}
+
+{% block content %}
+			<div id="slides">
+				{% for image in info.homeImages %}
+				<img src="/media/{{ image.img }}" alt="{{ image.title }}" />
+				{% endfor %}
+			</div>
+{% endblock %}
